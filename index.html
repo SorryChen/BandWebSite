@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>Band</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="navi">
+        <div class="login_btn" onclick="showSignin()">
+            Sign In
+        </div>
+        <div class="download_btn">
+            <a href="https://github.com/MedicalAssistanceAPPofOUC/MedicalAssistanceAPP">Download</a>
+        </div>
+    </div>
+
+    <div class="introduce_box">
+        <div class="introduce_bg2" id="introduce_bg2"></div>
+        <div class="introduce_bg1" id="introduce_bg1"></div>
+        <div class="introduce_bg0" id="introduce_bg0"></div>
+
+        <div class="mask"></div>
+        <div class="logo"></div>
+        <div class="introduce2_1" id="introduce2_1">
+            Record your sign data
+        </div>
+        <div class="introduce2_2" id="introduce2_2">
+            talk to doctor with your data
+        </div>
+        <div class="introduce1_1" id="introduce1_1">
+            Protect you when you exercise
+        </div>
+        <div class="introduce1_2" id="introduce1_2">
+            call emergency number immediately
+        </div>
+        <div class="introduce0_1" id="introduce0_1">
+            Scan your heartrate and steps
+        </div>
+        <div class="introduce0_2" id="introduce0_2">
+            by Miband
+        </div>
+        <div class="start_btn_box">
+            <div class="start_btn" >
+                <a href="#detial_box">Get Start</a>
+            </div>
+        </div>
+        <div class="tag_box">
+                <table class="tag_select_box">
+                <tr>
+                    <th align="center">
+                        <div class="tag_select" id="tag0" onclick="selectTag(0 ,true)">
+
+                        </div>
+                    </th>
+                    <th align="center">
+                        <div class="tag_unselect" id="tag1" onclick="selectTag(1 ,true)">
+
+                        </div>
+                    </th>
+                    <th align="center">
+                        <div class="tag_unselect" id="tag2" onclick="selectTag(2 ,true)">
+
+                        </div>
+                    </th>
+                </tr>
+                </table>
+        </div>
+
+    </div>
+
+    <div class="detial_box" id="detial_box">
+        <div class="detial_box_0">
+            <i class="fa fa-heartbeat fa-4x" aria-hidden="true" style="margin-top:70px;"></i>
+            <div class="detial_text_0">
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scan HeartRate <br />
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Record Steps <br />
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call emergency telephone
+            </div>
+            <div class="detial_img_0">
+
+            </div>
+        </div>
+        <div class="detial_box_1">
+            <i class="fa fa-database fa-4x" aria-hidden="true" style="margin-top:70px;"></i>
+            <div class="detial_text_1">
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Record HeartRate Everyday<br />
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Record Steps Everyday <br />
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And More
+            </div>
+            <div class="detial_img_1">
+
+            </div>
+        </div>
+        <div class="detial_box_2">
+            <i class="fa fa-comments-o fa-4x" aria-hidden="true" style="margin-top:70px;"></i>
+            <div class="detial_text_0">
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leave message to others <br />
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Advice from doctor <br />
+                ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Easy communication
+            </div>
+            <div class="detial_img_2">
+
+            </div>
+        </div>
+    </div>
+
+
+    <form name="login" method="post" action="api.php">
+        <div class="login" id="login">
+            <div class="login_box">
+
+                <div class="login_title_box">
+                    <i class="fa fa-television fa-2x" aria-hidden="true" style="color:white;margin-top:28px;margin-left:50px;float:left;"></i>
+                    <div class="login_title">Sign In</div>
+                    <div class="login_close_box" onclick="closeSignin()">
+                        ×
+                    </div>
+                </div>
+                <div class="account_box">
+                    <span class="input input--kaede">
+                        <input class="input__field input__field--kaede" type="text" id="input-35" name="account"/>
+                        <label class="input__label input__label--kaede" for="input-35">
+                            <span class="input__label-content input__label-content--kaede">Account</span>
+                    </label>
+                    </span>
+
+                </div>
+                <div class="password_box">
+                    <span class="input input--kaede">
+                        <input class="input__field input__field--kaede" type="password" id="input-36" name="password"/>
+                        <label class="input__label input__label--kaede" for="input-36">
+                            <span class="input__label-content input__label-content--kaede">Password</span>
+                    </label>
+                    </span>
+                </div>
+                <div class="submit_box">
+                    <input type="text" name="method" value="web.login" style="display:none;" />
+                    <input type="submit" name="Submit" value="Submit" class="submit" />
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+
+</body>
+
+<script>
+    var i = 1;
+    var flag = false;
+
+    var timer1 = setInterval("selectTag("+i+", "+flag+")",5000);//1000为1秒钟
+
+
+    function selectTag(index,flag){
+
+        if(flag){
+            clearInterval(timer1);
+            i = index;
+            $("#tag"+index).removeClass().addClass("tag_select");
+            $("#tag"+(index+1)%3).removeClass().addClass("tag_unselect");
+            $("#tag"+(index+2)%3).removeClass().addClass("tag_unselect");
+            $("#introduce_bg"+index).animate({opacity:"show"},1000);
+            $("#introduce_bg"+(index+1)%3).animate({opacity:"hide"},1000);
+            $("#introduce_bg"+(index+2)%3).animate({opacity:"hide"},1000);
+            $("#introduce"+index+"_1").animate({opacity:"show"},1000);
+            $("#introduce"+(index+1)%3+"_1").animate({opacity:"hide"},1000);
+            $("#introduce"+(index+2)%3+"_1").animate({opacity:"hide"},1000);
+            $("#introduce"+index+"_2").animate({opacity:"show"},1000);
+            $("#introduce"+(index+1)%3+"_2").animate({opacity:"hide"},1000);
+            $("#introduce"+(index+2)%3+"_2").animate({opacity:"hide"},1000);
+        }
+        else{
+
+            $("#tag"+i%3).removeClass().addClass("tag_select");
+            $("#tag"+(i+1)%3).removeClass().addClass("tag_unselect");
+            $("#tag"+(i+2)%3).removeClass().addClass("tag_unselect");
+            $("#introduce_bg"+i%3).animate({opacity:"show"},1000);
+            $("#introduce_bg"+(i+1)%3).animate({opacity:"hide"},1000);
+            $("#introduce_bg"+(i+2)%3).animate({opacity:"hide"},1000);
+            $("#introduce"+i%3+"_1").animate({opacity:"show"},1000);
+            $("#introduce"+(i+1)%3+"_1").animate({opacity:"hide"},1000);
+            $("#introduce"+(i+2)%3+"_1").animate({opacity:"hide"},1000);
+            $("#introduce"+i%3+"_2").animate({opacity:"show"},1000);
+            $("#introduce"+(i+1)%3+"_2").animate({opacity:"hide"},1000);
+            $("#introduce"+(i+2)%3+"_2").animate({opacity:"hide"},1000);
+        }
+        i = i+1;
+
+    }
+
+    function showSignin(){
+        $("#login").animate({opacity:"show"});
+    }
+
+    function closeSignin(){
+        $("#login").animate({opacity:"hide"});
+    }
+
+</script>
+
+
+</html>

@@ -1,0 +1,360 @@
+@font-face {
+    /* font-properties */
+    font-family: JosefinSans;
+    src: url('./fonts/JosefinSans-Regular.ttf')
+}
+
+@font-face {
+    /* font-properties */
+    font-family: LetterGothicStd-Bold;
+    src: url('./fonts/LetterGothicStd-Bold.otf')
+}
+
+@font-face {
+    /* font-properties */
+    font-family: LetterGothicStd;
+    src: url('./fonts/LetterGothicStd.otf')
+}
+
+
+@font-face {
+    /* font-properties */
+    font-family: Orbitron;
+    src: url('./fonts/orbitron.otf')
+}
+
+
+body {
+    margin: 0;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input:focus {
+    background-color：transparent;
+    outline: none
+}
+
+.login {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.login_title_box {
+    width: 100%;
+    height: 80px;
+    background-color: #3cc5f1;
+}
+
+.login_box {
+    height: 350px;
+    width: 400px;
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    left: 50%;
+    margin-top: 100px;
+    margin-left: -175px;
+    background-color: rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.login_title {
+    float: left;
+    margin-top: 22px;
+    color: white;
+    font-size: 32px;
+    margin-left: 20px;
+    font-family: 'JosefinSans';
+}
+
+.account_box {
+    margin-top: 30px;
+    width: 320px;
+    height: 48px;
+    display: inline-block;
+}
+
+.password_box {
+    margin-top: 30px;
+    width: 320px;
+    height: 48px;
+    display: inline-block;
+}
+
+.submit_box {
+    margin-top: 50px;
+    width: 300px;
+    height: 50px;
+    display: inline-block;
+}
+
+.text_edit {
+    height: 50px;
+    width: 70%;
+    line-height: 50px;
+    font-size: 16px;
+    font-family: 'JosefinSans';
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.submit {
+    height: 30px;
+    width: 80px;
+    border: 0px solid #d5d5d5;
+    border-radius: 25px;
+    font-family: 'JosefinSans';
+    background-color: #3cc5f1;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.login_close_box {
+    height: 30px;
+    width: 30px;
+    border: 0px solid #d5d5d5;
+    border-radius: 25px;
+    font-family: 'JosefinSans';
+    background-color: #3cc5f1;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    float: right;
+}
+
+.introduce_box {
+    width: 100%;
+    height: 650px;
+    text-align:center;
+}
+
+.introduce_bg0,.introduce_bg1,.introduce_bg2 {
+    width: 100%;
+    height: 650px;
+    line-height: 650px;
+    overflow: hidden;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+.introduce_bg0 {
+    background-image: url("./res/band.jpg");
+}
+.introduce_bg1 {
+    display: none;
+    background-image: url("./res/run.jpg");
+}
+.introduce_bg2 {
+    display: none;
+    background-image: url("./res/social.jpg");
+}
+
+.mask{
+    width: 100%;
+    height: 650px;
+    line-height: 650px;
+    text-align: center;
+    background-color: rgba(2, 12, 24, .8);
+    position: absolute;
+}
+
+.logo{
+    width: 200px;
+    height: 150px;
+    margin-left: 20px;
+    background-image: url("./res/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.navi{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 1001;
+    font-family: Orbitron;
+}
+
+.login_btn, .download_btn a{
+    text-decoration:none;
+    float: right;
+    height: 100px;
+    line-height: 50px;
+    color: white;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.introduce0_1,.introduce1_1,.introduce2_1{
+    width: 100%;
+    color: white;
+    position: absolute;
+    margin-top: 200px;
+    font-family: LetterGothicStd-Bold;
+    font-size: 60px;
+}
+
+.introduce0_2,.introduce1_2,.introduce2_2{
+    width: 100%;
+    color: white;
+    position: absolute;
+    margin-top: 300px;
+    font-family: LetterGothicStd;
+    font-size: 30px;
+}
+
+.introduce1_1,.introduce2_1{
+    display: none;
+}
+
+.introduce1_2,.introduce2_2{
+    display: none;
+}
+.start_btn_box{
+    width: 100%;
+    height: 40px;
+    color: white;
+    position: absolute;
+    margin-top: 500px;
+    font-family: Orbitron;
+    font-size: 18px;
+    text-align: center;
+}
+
+.start_btn{
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+    height: 100%;
+    line-height: 40px;
+    border: 2px solid white;
+}
+
+.start_btn a{
+    text-decoration:none;
+    color: white;
+    cursor: pointer;
+}
+
+.tag_box{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 550px;
+    position: absolute;
+    z-index: 1002;
+}
+
+.tag_select_box{
+    height: 100%;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tag_select{
+    height: 20px;
+    width: 20px;
+    background-image: url("./res/tag_select.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tag_unselect{
+    height: 20px;
+    width: 20px;
+    background-image: url("./res/tag_unselect.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.detial_box{
+    width: 100%;
+    height: 900px;
+}
+
+.detial_box_0{
+    width: 33%;
+    height: 900px;
+    float: left;
+    text-align: center;
+}
+
+.detial_box_1{
+    width: 33%;
+    height: 900px;
+    float: left;
+    text-align: center;
+}
+
+.detial_box_2{
+    width: 33%;
+    height: 900px;
+    float: left;
+    text-align: center;
+}
+
+.detial_text_0{
+    margin-left: auto;
+    margin-right: auto;
+    width: 270px;
+    text-align: left;
+    margin-top: 50px;
+    font-size: 22px;
+    line-height: 60px;
+    font-family: JosefinSans;
+}
+
+.detial_text_1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 290px;
+    text-align: left;
+    margin-top: 50px;
+    font-size: 22px;
+    line-height: 60px;
+    font-family: JosefinSans;
+}
+
+.detial_img_0,.detial_img_1,.detial_img_2{
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 200px;
+    margin-top: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.detial_img_0{
+
+    background-image: url("./res/phone0.png");
+}
+
+.detial_img_1{
+
+    background-image: url("./res/phone1.png");
+
+}
+
+.detial_img_2{
+
+    background-image: url("./res/phone2.png");
+
+}
